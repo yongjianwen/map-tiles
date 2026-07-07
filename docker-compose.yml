@@ -1,0 +1,9 @@
+services:
+  tile-server:
+    image: nginx:alpine
+    container_name: tile-server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./tiles:/usr/share/nginx/html/tiles:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
